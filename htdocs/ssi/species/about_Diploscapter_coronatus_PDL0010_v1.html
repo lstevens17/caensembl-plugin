@@ -1,37 +1,30 @@
 <!-- {about} --><a name="about"></a>
 
-  <p id="about"><em>Caenorhabditis afra</em> (formerly sp. 7) is a gonochoristic species belonging to the Elegans supergroup. The sequenced strain, JU1286, is an inbred strain generated from the type isolate JU1199, which was isolated in Begoro, Ghana [1]. See below for more information.</p>
+  <p id="about"><em>Diploscapter coronatus</em> is pathenogentic species which is closely related to <em>C. elegans</em> [1]. Unusually, the haploid genome of <em>D. coronatus</em> consists of only a single chromosome [1]. See below for more information.</p>
 
 
 <!-- {about} -->
-<!-- {assembly} --><a name="assembly"></a>
-  <h2 id="assembly" style="margin-bottom:5px">Species and strain</h2>
-  <p><em>C. afra</em> (sp. 7) was formally described in [1]. Discussion about morphological characters can be found in [2] (termed sp. 7 here). <em>C. imperialis</em> is the most closely related species [1].</p>
-  <p>Zoobank entry: <a href="http://zoobank.org/NomenclaturalActs/E705B72C-1E5D-469B-BC6A-9E539B3FDD8D">E705B72C-1E5D-469B-BC6A-9E539B3FDD8D</a></p>
-  <p>CGC strain entry: <a href="https://cgc.umn.edu/strain/JU1286">JU1286</a></p>
-
-<a name="assembly"></a>
-<h2 id="assembly" style="margin-bottom:5px">Raw data</h2>
-<p>The raw data can be downloaded from either ENA or NCBI (please note the raw data contain sequencing adapters and bacterial contamination - contact <a href="mailto:lewis.stevens@ed.ac.uk">lewis.stevens@ed.ac.uk</a> for “cleaned” reads):</p>
-<p><a href="https://www.ebi.ac.uk/ena/data/view/PRJEB11394">https://www.ebi.ac.uk/ena/data/view/PRJEB11394</a></p>
-<p><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB11394/">https://www.ncbi.nlm.nih.gov/bioproject/PRJEB11394/</a></p>
-
-
 <a name="assembly"></a>
 <h2 id="assembly" style="margin-bottom:5px">Assembly</h2>
-<p>The genome of <em>C. afra</em> JU1286 was assembled by Matt Newton (Blaxter Lab) using short-read data.</p>
-<p>See our general assembly pipeline for more info: <a href="https://gist.github.com/GDKO/dad1e9e76b01f43effc2">CGP Pipeline</a></p>
+<p>The genome of <em>D. coronatus</em> was sequenced, assembled and published by Hideaki Hiraki and colleagues [1].</p>
+<p>From [1]:</p>
+<p>"The genome sequence was assembled from all the four libraries together by the Celera assembler [22] (options: “gkpFixInsertSizes = 0 bogBadMateDepth = 1000 cgwDemoteRBP = 0” and “doTrim_initialMerBased = 0 doTrim_initialQualityBased = 1” for Illumina Miseq reads, version: 7.0). The obtained sequences were 177,655,898 bp in 971 scaffolds consisting of 1817 contigs and 12,242,269 bp in 38,996 degenerate (meaning unused repeats) contigs. The statistics of the reads used (trimmed in the assembly process) are found in Additional file 1: Table S1. Miseq reads were re-mapped to the scaffolds and degenerates by BWA [75] (version 0.6.1-r104). Based on the results, 520 scaffolds, which were mapped at more than 0.01 reads/bp and longer than 2 kbp, were selected. A long scaffold apparently derived from the food bacterium E. coli OP50 was thus discarded at this stage. Furthermore, nine scaffolds turned out to represent the mitochondrial genome as described below. As a result, the remaining 511 scaffolds were considered to represent the D. coronatus genome. All analyses were performed with these."</p>
+<p></p>
+<p><strong>NOTE: Heterozygositiy has intentionally been preserved in this assembly. This means the gene count and assembly span are higher than expected for a haploid assembly.</strong></p>
 
 <!-- {assembly} -->
 <!-- {annotation} --><a name="annotation"></a>
   <h2 id="annotation" style="margin-bottom:5px">Annotation</h2>
-  <p>Genes were predicted using BRAKER which utilises evidence from raw RNA-seq data [3].</a></p>
+  <p>From [1]:</a></p>
+  <p>"From the paired-end reads of the RNA-seq library, the adapter sequences were removed by SeqPrep [93] (version 1.1). Because almost all (92.8%) of the paired end reads could be merged to single sequences by this process, we used only the merged sequences. The merged reads were mapped to the genome sequence by TopHat [94] (options: --min-intron-length 5 --min-segment-intron 5, version: 2.0.5 with bowtie version 2.0.0-beta7). 91% of the reads could be mapped and 88% of the mapped reads were uniquely mapped.
+
+Protein coding genes were predicted by Augustus [26, 27] (options: --species = caenorhabditis --allow_hinted_splicesites = atac --alternatives-from-evidence = false --min_intron_len = 8, version: 2.7) using the hints from the mapping result of the RNA-seq (bam2hints with options --intronsonly --maxgaplen = 0 --minintronlen = 8 --maxintronlen = 10,000, bam2wig and wig2hints.pl with options --width = 10 --margin = 10 --minthresh = 2 --minscore = 4 --prune = 0.1 --radius = 4.5 were used to prepare the hints and the configuration file “extrinsic.M.RM.E.W.cfg” in the Augustus package was applied). 33,459 genes were obtained.
+
+Additional genes were predicted from the mapping result of RNA-seq by Cufflinks [95, 96] (options: --min-intron-length 5 --max-intron-length 25,000 --overlap-radius 5, version 2.0.0). If the prediction was placed intergenic of the Augustus predicted genes (class_code “u” was assigned by cuffcompare) and its longest open reading frame was longer than 89 bp, the model was adopted. 962 genes were obtained in this way. Together with the Augustus predicted genes, 34,421 protein coding genes were predicted."</p>
 <!-- {annotation} -->
 <!-- {references} -->
   <h2>References</h2>
   <ol>
-    <li><a id="ref-01"></a><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3984244/">A Streamlined System for Species Diagnosis in <em>Caenorhabditis</em> (Nematoda: Rhabditidae) with Name Designations for 15 Distinct Biological Species</a>.</li>
-    <li><a id="ref-02"></a><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3277298/">A phylogeny and molecular barcodes for <em>Caenorhabditis</em>, with numerous new species from rotting fruits</a>.</li>
-    <li><a id="ref-03"></a><a href="https://www.ncbi.nlm.nih.gov/pubmed/26559507">BRAKER1: Unsupervised RNA-Seq-Based Genome Annotation with GeneMark-ET and AUGUSTUS</a>.</li>
+    <li><a id="ref-01"></a><a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3860-x">Genome analysis of <em>Diploscapter coronatus</em>: insights into molecular peculiarities of a nematode with parthenogenetic reproduction</a>.</li>
   </ol>
  <!-- {references} -->
